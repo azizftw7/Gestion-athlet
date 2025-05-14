@@ -18,7 +18,7 @@ public class Compte {
 
     private String role;
 
-    // Constructors
+    
     public Compte() {}
 
     public Compte(String username, String email, String password, String role) {
@@ -28,7 +28,7 @@ public class Compte {
         this.role = role;
     }
 
-    // Getters and Setters
+    
     public Long getId() {
         return id;
     }

@@ -1,8 +1,8 @@
 package com.gestion.athlete.repositories;
 
-import com.gestion.athlete.models.athlet;
+import com.gestion.athlete.models.Athlete;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AthleteRepository extends JpaRepository<athlet, Long> {
+public interface AthleteRepository extends JpaRepository<Athlete, Long> {
   
 }
