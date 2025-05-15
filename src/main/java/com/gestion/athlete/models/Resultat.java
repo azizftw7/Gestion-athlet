@@ -1,6 +1,8 @@
 package com.gestion.athlete.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Resultat {
@@ -8,10 +10,12 @@ public class Resultat {
     @EmbeddedId
     private ResultatId id;
 
-    private double temps;
+    @NotNull(message = "Le temps est obligatoire")
+    @Min(value = 0, message = "Le temps doit être un nombre positif")
+    private Double temps;
 
     @ManyToOne
-    @MapsId("codeA")  
+    @MapsId("codeA")
     @JoinColumn(name = "codeA")
     private Athlete athlete;
 
@@ -20,9 +24,8 @@ public class Resultat {
     @JoinColumn(name = "numCourse")
     private Course course;
 
-    public Resultat() {}
-
-   
+    public Resultat() {
+    }
 
     public ResultatId getId() {
         return id;
